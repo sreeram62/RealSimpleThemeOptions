@@ -8,3 +8,6 @@ Usage:
 1. Install the plugin
 2. Go to Options --> Settings
 3. In theme options add the required fileds and you can call theme in theme files.
+
+
+This branch has image uploading Options under progress.
