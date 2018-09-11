@@ -1,5 +1,26 @@
 <h2><?php esc_attr_e( 'Welcome to Real Simple Theme Options Settings Page !!', 'wp_admin_style' ); ?></h2>
 
+<script>
+jQuery(document).ready(function() {
+    var $ = jQuery;
+    if ($('.set_custom_images').length > 0) {
+        if ( typeof wp !== 'undefined' && wp.media && wp.media.editor) {
+            $(document).on('click', '.set_custom_images', function(e) {
+                e.preventDefault();
+                var button = $(this);
+                var id = button.prev();
+                wp.media.editor.send.attachment = function(props, attachment) {
+                    id.val(attachment.url);
+                };
+                wp.media.editor.open(button);
+                return false;
+            });
+        }
+    }
+});
+
+</script>
+
 <div class="wrap">
 
 	<div id="icon-options-general" class="icon32"></div>
@@ -22,18 +43,35 @@
 								<div class="inside">
 									<table class="form-table">
 										<input type="hidden" name="wp_so_submitted" value="Y">
-												<tr valign="top">
-														<td scope="row"><label for="wp_so_header_logo_url"><?php esc_attr_e('Header Logo URL', 'wp_admin_style'); ?></label></td>
-														<td><input id="wp_so_header_logo_url" name="wp_so_header_logo_url" class="regular-text" type="text" value="<?php echo $wp_so_header_logo_url ?>" /><br></td>
-														<td><pre>Call using $options['wp_so_header_logo_url'];</pre></td>
+												<tr valign="top" class="alternate">			
+													<td scope="row">
+														<label for="wp_so_header_logo_url"><?php esc_attr_e('Logo URL', 'wp_admin_style'); ?></label>
+													</td>
+													<td>  
+														 <input  value="<?php echo $wp_so_header_logo_url ?>" class="regular-text process_custom_images" id="process_custom_images wp_so_header_logo_url" name="wp_so_header_logo_url" max="" min="1" step="1" name="wp_so_header_logo_url">
+													     <button class="set_custom_images button">Upload Image</button><br>
+													</td>
+													<td>
+														<pre>Call using $options['wp_so_header_logo_url'];</pre>
+													</td>
 												</tr>
-
-																						
-													<tr valign="top" class="alternate">
-														<td scope="row"><label for="wp_so_header_bg_color"><?php esc_attr_e('Header BG URL', 'wp_admin_style'); ?></label></td>
-														<td><input id="wp_so_header_bg_color" name="wp_so_header_bg_color" type="text" value="<?php echo $wp_so_header_bg_color ?>" class="regular-text" /><br></td>
-														<td><pre>Call using $options['wp_so_header_bg_color'];</pre></td>
-													</tr>
+										
+										
+													<tr valign="top" class="alternate">			
+													<td scope="row">
+														<label for="wp_so_header_bg_color"><?php esc_attr_e('Background URL', 'wp_admin_style'); ?></label>
+													</td>
+													<td>  
+														 <input  value="<?php echo $wp_so_header_bg_color ?>" class="regular-text process_custom_images" id="process_custom_images wp_so_header_bg_color" name="wp_so_header_bg_color" max="" min="1" step="1" name="wp_so_header_bg_color">
+													     <button class="set_custom_images button">Upload Image</button><br>
+													</td>
+													<td>
+														<pre>Call using $options['wp_so_header_bg_color'];</pre>
+													</td>
+												</tr>
+										
+										
+										
 									</table>
 							</div>
 							<!-- .inside -->
@@ -68,30 +106,70 @@
 								<!-- Contact Options End -->
 
 
-								<!-- Footer Options Start -->
+								<!-- Header Scripts/Styles Options Start -->
+								<div class="postbox">
+									<div class="handlediv" title="Click to toggle"><br></div>
+									<!-- Toggle -->
+									<h2 class="hndle"><span><?php esc_attr_e( 'Scripts/Styles/Analytics to Header', 'wp_admin_style' ); ?></span></h2>
+										<div class="inside">
+											<table class="form-table">
+															<tr valign="top" class="alternate">
+																<td scope="row"><label for="wp_so_head_styles"><?php esc_attr_e('Styles', 'wp_admin_style'); ?></label></td>
+																<td><textarea rows="4" cols="50" id="wp_so_head_styles" name="wp_so_head_styles"  value="<?php echo $wp_so_head_styles ?>" class="regular-text" /><?php echo $wp_so_head_styles ?></textarea><br></td>
+																<td><pre>Call using $options['wp_so_head_styles'];</pre></td>
+															</tr>
+
+															<tr valign="top" class="alternate">
+																<td scope="row"><label for="wp_so_analytics"><?php esc_attr_e('Analytics', 'wp_admin_style'); ?></label></td>
+																<td><textarea rows="4" cols="50" id="wp_so_analytics" name="wp_so_analytics"  value="<?php echo $wp_so_analytics ?>" class="regular-text" /><?php echo $wp_so_analytics ?></textarea><br></td>
+																<td><pre>Call using $options['wp_so_analytics'];</pre></td>
+															</tr>
+					
+															<tr valign="top" class="alternate">
+																<td scope="row"><label for="wp_so_other_head"><?php esc_attr_e('Other Scripts', 'wp_admin_style'); ?></label></td>
+																<td><textarea rows="4" cols="50" id="wp_so_other_head" name="wp_so_other_head"  value="<?php echo $wp_so_other_head ?>" class="regular-text" /><?php echo $wp_so_other_head ?></textarea><br></td>
+																<td><pre>Call using $options['wp_so_other_head'];</pre></td>
+															</tr>
+											</table>
+									</div>
+									<!-- .inside -->
+								</div>
+									<!-- Header Scripts/Styles Options End -->
+		
+		
+		
+		
+		
+		<!-- Footer Options Start -->
 								<div class="postbox">
 									<div class="handlediv" title="Click to toggle"><br></div>
 									<!-- Toggle -->
 									<h2 class="hndle"><span><?php esc_attr_e( 'Footer Options', 'wp_admin_style' ); ?></span></h2>
 										<div class="inside">
 											<table class="form-table">
-														<tr valign="top">
-																<td scope="row"><label for="wp_so_footer_logo"><?php esc_attr_e('Footer Logo', 'wp_admin_style'); ?></label></td>
-																<td><input id="wp_so_footer_logo" name="wp_so_footer_logo" class="regular-text" type="text" value="<?php echo $wp_so_footer_logo ?>" /><br></td>
-																<td><pre>Call using $options['wp_so_footer_logo'];</pre></td>
-														</tr>
+												       <tr valign="top" class="alternate">			
+															<td scope="row">
+																<label for="wp_so_footer_logo"><?php esc_attr_e('Footer Logo URL', 'wp_admin_style'); ?></label>
+															</td>
+															<td>  
+																 <input  value="<?php echo $wp_so_footer_logo ?>" class="regular-text process_custom_images" id="process_custom_images wp_so_footer_logo" name="wp_so_footer_logo" max="" min="1" step="1" name="wp_so_footer_logo">
+																 <button class="set_custom_images button">Upload Image</button><br>
+															</td>
+															<td>
+																<pre>Call using $options['wp_so_footer_logo'];</pre>
+															</td>
+												</tr>
+												
+												<tr valign="top">
+		                  		<td scope="row"><label for="wp_so_copyright"><?php esc_attr_e('Copyright Info', 'wp_admin_style'); ?></label></td>
+		                  		<td><input id="wp_so_copyright" name="wp_so_copyright" class="regular-text" type="text" value="<?php echo $wp_so_copyright ?>" /><br></td>
+													<td><pre>Call using $options['wp_so_copyright'];</pre></td>
+		                  </tr>
+												
+												
+														
 
-															<tr valign="top" class="alternate">
-																<td scope="row"><label for="wp_so_copyright"><?php esc_attr_e('Copyright', 'wp_admin_style'); ?></label></td>
-																<td><input id="wp_so_copyright" name="wp_so_copyright" type="text" value="<?php echo $wp_so_copyright ?>" class="regular-text" /><br></td>
-																<td><pre>Call using $options['wp_so_copyright'];</pre></td>
-															</tr>
-
-															<tr valign="top" class="alternate">
-																<td scope="row"><label for="wp_so_analytics"><?php esc_attr_e('Analytics', 'wp_admin_style'); ?></label></td>
-																<td><input id="wp_so_analytics" name="wp_so_analytics" type="text" value="<?php echo $wp_so_analytics ?>" class="regular-text" /><br></td>
-																<td><pre>Call using $options['wp_so_analytics'];</pre></td>
-															</tr>
+														
 											</table>
 									</div>
 									<!-- .inside -->
@@ -136,6 +214,12 @@
 													<td><input id="wp_so_youtube_url" name="wp_so_youtube_url" type="text" value="<?php echo $wp_so_youtube_url ?>" class="regular-text" /><br></td>
 													<td><pre>Call using $options['wp_so_youtube_url'];</pre></td>
 												</tr>
+					
+					                          
+					
+										
+					
+					                         
                 </table>
 
 						</div>
@@ -145,6 +229,49 @@
 
 					</div>
 						<!-- Social Icons End -->
+
+<!-- Admin Options Start -->
+						<div class="postbox">
+							<div class="handlediv" title="Click to toggle"><br></div>
+							<!-- Toggle -->
+							<h2 class="hndle"><span><?php esc_attr_e( 'Admin Options', 'wp_admin_style' ); ?></span></h2>
+								<div class="inside">
+									<table class="form-table">
+										<input type="hidden" name="wp_so_submitted" value="Y">
+												<tr valign="top" class="alternate">			
+													<td scope="row">
+														<label for="wp_so_admin_logo_url"><?php esc_attr_e('Logo URL', 'wp_admin_style'); ?></label>
+													</td>
+													<td>  
+														 <input  value="<?php echo $wp_so_admin_logo_url ?>" class="regular-text process_custom_images" id="process_custom_images wp_so_admin_logo_url" name="wp_so_admin_logo_url" max="" min="1" step="1" name="wp_so_admin_logo_url">
+													     <button class="set_custom_images button">Upload Image</button><br>
+													</td>
+													<td>
+														<pre>Call using $options['wp_so_admin_logo_url'];</pre>
+													</td>
+												</tr>
+										
+										
+													<tr valign="top" class="alternate">			
+													<td scope="row">
+														<label for="wp_so_header_bg_color"><?php esc_attr_e('Background URL', 'wp_admin_style'); ?></label>
+													</td>
+													<td>  
+														 <input  value="<?php echo $wp_so_admin_bg ?>" class="regular-text process_custom_images" id="process_custom_images wp_so_admin_bg" name="wp_so_admin_bg" max="" min="1" step="1" name="wp_so_admin_bg">
+													     <button class="set_custom_images button">Upload Image</button><br>
+													</td>
+													<td>
+														<pre>Call using $options['wp_so_admin_bg'];</pre>
+													</td>
+												</tr>
+										
+										
+										
+									</table>
+							</div>
+							<!-- .inside -->
+						</div>
+							<!-- Admkin Options End -->
 
 					<!-- .postbox -->
 					<p>
@@ -226,7 +353,7 @@
 								); ?></span></h2>
 
 						<div class="inside">
-							<p>To use this plugin, just install it and activate it. Then place this code in header.php <br/> <br/> <code> $options = get_option('wp_so_options'); </code> <br/><br/>  Then to call an element use the markup shown next to the input field to use the corresponding field.</p>
+							<p>To use this plugin, just install it and activate it. Then place this code in <code>header.php and footer.php</code> <br/> <br/> <code> global $options; </code> <br/><br/>  Then to call an element use the markup shown next to the input field to use the corresponding field.</p>
 						</div>
 						<!-- .inside -->
 
@@ -257,8 +384,7 @@
 									<ul>
 									   <li>Remove adding of code in header file.Plugin works on activation.</li>
 									   <li>Adding color picker for easy usage.</li>
-									   <li>Adding support to change admin screen logo using upload</li>
-									   <li>Adding new inputs that can be Customized and more !! </li>
+									   <li>Adding scripts to footer.</li>
 									<ul><br/>
 									Stay tuned !!
 							</p>
