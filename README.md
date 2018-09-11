@@ -20,7 +20,7 @@ Usage:
 3. In theme options add the required fileds and you can call theme in theme files.
 
 
-Version 1.0.1
+Version 1.1
 - Updated all image fields to uplaod buttons
 - Added new fields for admin logo and admin background.
 - Added fields to add scripts/style sheets to header of wordpress site.
