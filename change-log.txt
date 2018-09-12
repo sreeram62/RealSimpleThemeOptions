@@ -1,0 +1,5 @@
+## [1.1] - 2018-09-1
+### Added
+- Updated all image fields to uplaod buttons
+- Added new fields for admin logo and admin background.
+- Added fields to add scripts/style sheets to header of wordpress site.

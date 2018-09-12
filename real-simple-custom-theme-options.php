@@ -5,6 +5,10 @@ Plugin URI:  https://github.com/sreeram62/RealSimpleThemeOptions
 Description: Simple theme optipns to make wordpress more easy !!
 Version: 1.0.1
 Author: Ram Gupta
+<<<<<<< HEAD
+=======
+Author URI: https://github.com/sreeram62/RealSimpleThemeOptions
+>>>>>>> 5968ca530810a1cb00245b7df29acda791c3ea01
 Text Domain:
 Domain Path:
 */
@@ -60,6 +64,7 @@ return "Backend";
 add_filter("login_headertitle", "change_title_on_logo");
 	
 echo '<style type="text/css">
+<<<<<<< HEAD
 
 h1 a {background-image: url('.$options["wp_so_admin_logo_url"].') !important;
      background-position: center center !important;}
@@ -94,6 +99,42 @@ body.login{background-image: url('.$options["wp_so_admin_bg"].') !important;
     border-radius: 3px;
 }
 
+=======
+
+h1 a {background-image: url('.$options["wp_so_admin_logo_url"].') !important;
+     background-position: center center !important;}
+
+h1 a {background-size: 200px !important;}
+h1 a {width: 200px !important;}
+h1{border-radius:10px;}
+body.login{background-image: url('.$options["wp_so_admin_bg"].') !important;
+            background-size: cover;
+		background-repeat: no-repeat;
+
+}
+.login-action-login #loginform{
+   background: #eee;
+   border-radius:15px;
+}
+.login a{color:white !important}
+.login input[type="text"]{ border: 1px solid #d2d2d2 !important ;
+    height: 50px;
+    width: 100%;
+    padding: 5px 15px !important;
+    color: #545c62 !important;
+    font-size: 16px;
+    font-weight: 300;
+}
+.login input[type="submit"]{
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff !important;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+>>>>>>> 5968ca530810a1cb00245b7df29acda791c3ea01
 .login input[type="submit"]{
    text-shadow: none !important;
    box-shadow : none !important;
@@ -149,24 +190,33 @@ function wp_real_simple_theme_options_page(){
 			  
 		 }  
 
+<<<<<<< HEAD
 	   update_option('wp_so_options',$options);
+=======
+      
+>>>>>>> 5968ca530810a1cb00245b7df29acda791c3ea01
      }
    }
 
    $options = get_option('wp_so_options');
    if($options != ''){
+<<<<<<< HEAD
 	     foreach ($options as $key => $value) {
 	     $$key = $value;
 	 }
 	   	
    }
 
-   $options = get_option('wp_so_options');
-  if($options != ''){
-	     foreach ($options as $key => $value) {
-	     $$key = $value;
-	 }
+ 
 	   	
+=======
+
+         
+	  
+	   
+	 
+
+>>>>>>> 5968ca530810a1cb00245b7df29acda791c3ea01
    }
 //wp_so_image_url
   require('inc/options-page-wrapper.php');
