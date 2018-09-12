@@ -5,10 +5,7 @@ Plugin URI:  https://github.com/sreeram62/RealSimpleThemeOptions
 Description: Simple theme optipns to make wordpress more easy !!
 Version: 1.0.1
 Author: Ram Gupta
-<<<<<<< HEAD
-=======
 Author URI: https://github.com/sreeram62/RealSimpleThemeOptions
->>>>>>> 5968ca530810a1cb00245b7df29acda791c3ea01
 Text Domain:
 Domain Path:
 */
@@ -64,7 +61,6 @@ return "Backend";
 add_filter("login_headertitle", "change_title_on_logo");
 	
 echo '<style type="text/css">
-<<<<<<< HEAD
 
 h1 a {background-image: url('.$options["wp_so_admin_logo_url"].') !important;
      background-position: center center !important;}
@@ -99,7 +95,7 @@ body.login{background-image: url('.$options["wp_so_admin_bg"].') !important;
     border-radius: 3px;
 }
 
-=======
+
 
 h1 a {background-image: url('.$options["wp_so_admin_logo_url"].') !important;
      background-position: center center !important;}
@@ -134,7 +130,7 @@ body.login{background-image: url('.$options["wp_so_admin_bg"].') !important;
     border-radius: 3px;
 }
 
->>>>>>> 5968ca530810a1cb00245b7df29acda791c3ea01
+
 .login input[type="submit"]{
    text-shadow: none !important;
    box-shadow : none !important;
@@ -190,17 +186,16 @@ function wp_real_simple_theme_options_page(){
 			  
 		 }  
 
-<<<<<<< HEAD
+
 	   update_option('wp_so_options',$options);
-=======
-      
->>>>>>> 5968ca530810a1cb00245b7df29acda791c3ea01
+
+
      }
    }
 
    $options = get_option('wp_so_options');
    if($options != ''){
-<<<<<<< HEAD
+
 	     foreach ($options as $key => $value) {
 	     $$key = $value;
 	 }
@@ -209,15 +204,13 @@ function wp_real_simple_theme_options_page(){
 
  
 	   	
-=======
+
 
          
 	  
 	   
-	 
 
->>>>>>> 5968ca530810a1cb00245b7df29acda791c3ea01
-   }
+   
 //wp_so_image_url
   require('inc/options-page-wrapper.php');
     }
