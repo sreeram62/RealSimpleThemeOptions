@@ -52,7 +52,7 @@ jQuery(document).ready(function() {
 													     <button class="set_custom_images button">Upload Image</button><br>
 													</td>
 													<td>
-														<pre>Call using $options['rscto_header_logo_url'];</pre>
+														<pre>$options['rscto_header_logo_url'];</pre>
 													</td>
 												</tr>
 										
@@ -66,7 +66,7 @@ jQuery(document).ready(function() {
 													     <button class="set_custom_images button">Upload Image</button><br>
 													</td>
 													<td>
-														<pre>Call using $options['rscto_header_bg_color'];</pre>
+														<pre>$options['rscto_header_bg_color'];</pre>
 													</td>
 												</tr>
 										

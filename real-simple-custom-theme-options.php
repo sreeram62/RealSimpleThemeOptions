@@ -57,10 +57,10 @@ function rscto_custom_loginlogo() {
 		$options["rscto_admin_logo_url"]= $defaultLogo;
 	}
 	
-function change_title_on_logo() {
+function rscto_change_title_on_logo() {
 return "Backend";
 }
-add_filter("login_headertitle", "change_title_on_logo");
+add_filter("login_headertitle", "rscto_change_title_on_logo");
 	
 echo '<style type="text/css">
 
@@ -140,11 +140,8 @@ function wp_real_simple_theme_options_page(){
   global $plugin_url;
   global $Options;
 	
-	
-	
-	
-	
-  if( !current_user_can('manage_options')){
+//Checking User Permissions	
+if( !current_user_can('manage_options')){
     wp_die('No Permissions');
   }
 	
@@ -163,11 +160,7 @@ function wp_real_simple_theme_options_page(){
         );
         return wp_kses($script_textarea, $allowed_html);
     }
-		 
-
-		 
-		 
-		 
+		 		 
 	   /*HeaderOptions*/
 	   $rscto_header_logo_url  = sanitize_text_field(esc_url_raw($_POST['rscto_header_logo_url']));
        $rscto_header_bg_color  = sanitize_text_field(esc_url_raw($_POST['rscto_header_bg_color']));
@@ -192,17 +185,11 @@ function wp_real_simple_theme_options_page(){
        $rscto_linkdin_url  = sanitize_text_field(esc_url_raw($_POST['rscto_linkdin_url']));
        $rscto_youtube_url  = sanitize_text_field(esc_url_raw($_POST['rscto_youtube_url']));
 		 
-	   /*Header Options 
-       $rscto_header_logo_url  = sanitize_text_field(esc_url_raw($_POST['rscto_header_logo_url']));
-       $rscto_header_bg_color  = sanitize_text_field(esc_url_raw($_POST['rscto_header_bg_color']));*/
-       
-      
-       /*Admin Options */      	   
+	   /*Admin Options */      	   
 	   $rscto_admin_logo_url  = esc_url_raw($_POST['rscto_admin_logo_url']);
        $rscto_admin_bg  = esc_html($_POST['rscto_admin_bg']);
 	   
 		 
-
        $options['rscto_twitter_url'] = $rscto_twitter_url;
        $options['rscto_facebook_url'] = $rscto_facebook_url;
        $options['rscto_linkdin_url'] = $rscto_linkdin_url;
@@ -232,7 +219,7 @@ function wp_real_simple_theme_options_page(){
 	 }
 	   	
    }
-//rscto_image_url
+
   require('inc/options-page-wrapper.php');
     }
 
