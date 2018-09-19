@@ -34,7 +34,7 @@ jQuery(document).ready(function() {
 			<div id="post-body-content">
 
 				<div class="meta-box-sortables ui-sortable">
-					<form name="wp_so_form" method="post" action="">
+					<form name="rscto_form" method="post" action="">
 						<!-- Header Options Start -->
 						<div class="postbox">
 							<div class="handlediv" title="Click to toggle"><br></div>
@@ -42,31 +42,31 @@ jQuery(document).ready(function() {
 							<h2 class="hndle"><span><?php esc_attr_e( 'Header Options', 'wp_admin_style' ); ?></span></h2>
 								<div class="inside">
 									<table class="form-table">
-										<input type="hidden" name="wp_so_submitted" value="Y">
+										<input type="hidden" name="rscto_submitted" value="Y">
 												<tr valign="top" class="alternate">			
 													<td scope="row">
-														<label for="wp_so_header_logo_url"><?php esc_attr_e('Logo URL', 'wp_admin_style'); ?></label>
+														<label for="rscto_header_logo_url"><?php esc_attr_e('Logo URL', 'wp_admin_style'); ?></label>
 													</td>
 													<td>  
-														 <input  value="<?php echo $wp_so_header_logo_url ?>" class="regular-text process_custom_images" id="process_custom_images wp_so_header_logo_url" name="wp_so_header_logo_url" max="" min="1" step="1" name="wp_so_header_logo_url">
+														 <input  value="<?php echo $rscto_header_logo_url ?>" class="regular-text process_custom_images" id="process_custom_images rscto_header_logo_url" name="rscto_header_logo_url" max="" min="1" step="1" name="rscto_header_logo_url">
 													     <button class="set_custom_images button">Upload Image</button><br>
 													</td>
 													<td>
-														<pre>Call using $options['wp_so_header_logo_url'];</pre>
+														<pre>Call using $options['rscto_header_logo_url'];</pre>
 													</td>
 												</tr>
 										
 										
 													<tr valign="top" class="alternate">			
 													<td scope="row">
-														<label for="wp_so_header_bg_color"><?php esc_attr_e('Background URL', 'wp_admin_style'); ?></label>
+														<label for="rscto_header_bg_color"><?php esc_attr_e('Background URL', 'wp_admin_style'); ?></label>
 													</td>
 													<td>  
-														 <input  value="<?php echo $wp_so_header_bg_color ?>" class="regular-text process_custom_images" id="process_custom_images wp_so_header_bg_color" name="wp_so_header_bg_color" max="" min="1" step="1" name="wp_so_header_bg_color">
+														 <input  value="<?php echo $rscto_header_bg_color ?>" class="regular-text process_custom_images" id="process_custom_images rscto_header_bg_color" name="rscto_header_bg_color" max="" min="1" step="1" name="rscto_header_bg_color">
 													     <button class="set_custom_images button">Upload Image</button><br>
 													</td>
 													<td>
-														<pre>Call using $options['wp_so_header_bg_color'];</pre>
+														<pre>Call using $options['rscto_header_bg_color'];</pre>
 													</td>
 												</tr>
 										
@@ -89,15 +89,15 @@ jQuery(document).ready(function() {
 									<div class="inside">
 										<table class="form-table">
 													<tr valign="top">
-															<td scope="row"><label for="wp_so_phone"><?php esc_attr_e('Phone Number', 'wp_admin_style'); ?></label></td>
-															<td><input id="wp_so_phone" name="wp_so_phone" class="regular-text" type="text" value="<?php echo $wp_so_phone ?>" /><br></td>
-															<td><pre>Call using $options['wp_so_phone'];</pre></td>
+															<td scope="row"><label for="rscto_phone"><?php esc_attr_e('Phone Number', 'wp_admin_style'); ?></label></td>
+															<td><input id="rscto_phone" name="rscto_phone" class="regular-text" type="text" value="<?php echo $rscto_phone ?>" /><br></td>
+															<td><pre>Call using $options['rscto_phone'];</pre></td>
 													</tr>
 
 														<tr valign="top" class="alternate">
-															<td scope="row"><label for="wp_so_email"><?php esc_attr_e('Email', 'wp_admin_style'); ?></label></td>
-															<td><input id="wp_so_email" name="wp_so_email" type="text" value="<?php echo $wp_so_email?>" class="regular-text" /><br></td>
-															<td><pre>Call using $options['wp_so_email'];</pre></td>
+															<td scope="row"><label for="rscto_email"><?php esc_attr_e('Email', 'wp_admin_style'); ?></label></td>
+															<td><input id="rscto_email" name="rscto_email" type="text" value="<?php echo $rscto_email?>" class="regular-text" /><br></td>
+															<td><pre>Call using $options['rscto_email'];</pre></td>
 														</tr>
 										</table>
 								</div>
@@ -114,21 +114,21 @@ jQuery(document).ready(function() {
 										<div class="inside">
 											<table class="form-table">
 															<tr valign="top" class="alternate">
-																<td scope="row"><label for="wp_so_head_styles"><?php esc_attr_e('Styles', 'wp_admin_style'); ?></label></td>
-																<td><textarea rows="4" cols="50" id="wp_so_head_styles" name="wp_so_head_styles"  value="<?php echo $wp_so_head_styles ?>" class="regular-text" /><?php echo $wp_so_head_styles ?></textarea><br></td>
-																<td><pre>Call using $options['wp_so_head_styles'];</pre></td>
+																<td scope="row"><label for="rscto_head_styles"><?php esc_attr_e('Styles', 'wp_admin_style'); ?></label></td>
+																<td><textarea rows="4" cols="50" id="rscto_head_styles" name="rscto_head_styles"  value="<?php echo $rscto_head_styles ?>" class="regular-text" /><?php echo $rscto_head_styles ?></textarea><br></td>
+																<td><pre>Call using $options['rscto_head_styles'];</pre></td>
 															</tr>
 
 															<tr valign="top" class="alternate">
-																<td scope="row"><label for="wp_so_analytics"><?php esc_attr_e('Analytics', 'wp_admin_style'); ?></label></td>
-																<td><textarea rows="4" cols="50" id="wp_so_analytics" name="wp_so_analytics"  value="<?php echo $wp_so_analytics ?>" class="regular-text" /><?php echo $wp_so_analytics ?></textarea><br></td>
-																<td><pre>Call using $options['wp_so_analytics'];</pre></td>
+																<td scope="row"><label for="rscto_analytics"><?php esc_attr_e('Analytics', 'wp_admin_style'); ?></label></td>
+																<td><textarea rows="4" cols="50" id="rscto_analytics" name="rscto_analytics"  value="<?php echo $rscto_analytics ?>" class="regular-text" /><?php echo $rscto_analytics ?></textarea><br></td>
+																<td><pre>Call using $options['rscto_analytics'];</pre></td>
 															</tr>
 					
 															<tr valign="top" class="alternate">
-																<td scope="row"><label for="wp_so_other_head"><?php esc_attr_e('Other Scripts', 'wp_admin_style'); ?></label></td>
-																<td><textarea rows="4" cols="50" id="wp_so_other_head" name="wp_so_other_head"  value="<?php echo $wp_so_other_head ?>" class="regular-text" /><?php echo $wp_so_other_head ?></textarea><br></td>
-																<td><pre>Call using $options['wp_so_other_head'];</pre></td>
+																<td scope="row"><label for="rscto_other_head"><?php esc_attr_e('Other Scripts', 'wp_admin_style'); ?></label></td>
+																<td><textarea rows="4" cols="50" id="rscto_other_head" name="rscto_other_head"  value="<?php echo $rscto_other_head ?>" class="regular-text" /><?php echo $rscto_other_head ?></textarea><br></td>
+																<td><pre>Call using $options['rscto_other_head'];</pre></td>
 															</tr>
 											</table>
 									</div>
@@ -149,21 +149,21 @@ jQuery(document).ready(function() {
 											<table class="form-table">
 												       <tr valign="top" class="alternate">			
 															<td scope="row">
-																<label for="wp_so_footer_logo"><?php esc_attr_e('Footer Logo URL', 'wp_admin_style'); ?></label>
+																<label for="rscto_footer_logo"><?php esc_attr_e('Footer Logo URL', 'wp_admin_style'); ?></label>
 															</td>
 															<td>  
-																 <input  value="<?php echo $wp_so_footer_logo ?>" class="regular-text process_custom_images" id="process_custom_images wp_so_footer_logo" name="wp_so_footer_logo" max="" min="1" step="1" name="wp_so_footer_logo">
+																 <input  value="<?php echo $rscto_footer_logo ?>" class="regular-text process_custom_images" id="process_custom_images rscto_footer_logo" name="rscto_footer_logo" max="" min="1" step="1" name="rscto_footer_logo">
 																 <button class="set_custom_images button">Upload Image</button><br>
 															</td>
 															<td>
-																<pre>Call using $options['wp_so_footer_logo'];</pre>
+																<pre>Call using $options['rscto_footer_logo'];</pre>
 															</td>
 												</tr>
 												
 												<tr valign="top">
-		                  		<td scope="row"><label for="wp_so_copyright"><?php esc_attr_e('Copyright Info', 'wp_admin_style'); ?></label></td>
-		                  		<td><input id="wp_so_copyright" name="wp_so_copyright" class="regular-text" type="text" value="<?php echo $wp_so_copyright ?>" /><br></td>
-													<td><pre>Call using $options['wp_so_copyright'];</pre></td>
+		                  		<td scope="row"><label for="rscto_copyright"><?php esc_attr_e('Copyright Info', 'wp_admin_style'); ?></label></td>
+		                  		<td><input id="rscto_copyright" name="rscto_copyright" class="regular-text" type="text" value="<?php echo $rscto_copyright ?>" /><br></td>
+													<td><pre>Call using $options['rscto_copyright'];</pre></td>
 		                  </tr>
 												
 												
@@ -192,27 +192,27 @@ jQuery(document).ready(function() {
 							<div class="inside">
                 <table class="form-table">
                         	<tr valign="top">
-		                  		<td scope="row"><label for="wp_so_twitter_url"><?php esc_attr_e('Twitter URL', 'wp_admin_style'); ?></label></td>
-		                  		<td><input id="wp_so_twitter_url" name="wp_so_twitter_url" class="regular-text" type="text" value="<?php echo $wp_so_twitter_url ?>" /><br></td>
-													<td><pre>Call using $options['wp_so_twitter_url'];</pre></td>
+		                  		<td scope="row"><label for="rscto_twitter_url"><?php esc_attr_e('Twitter URL', 'wp_admin_style'); ?></label></td>
+		                  		<td><input id="rscto_twitter_url" name="rscto_twitter_url" class="regular-text" type="text" value="<?php echo $rscto_twitter_url ?>" /><br></td>
+													<td><pre>Call using $options['rscto_twitter_url'];</pre></td>
 		                  </tr>
 
 		                  	<tr valign="top" class="alternate">
-		                  		<td scope="row"><label for="wp_so_facebook_url"><?php esc_attr_e('FaceBook URL', 'wp_admin_style'); ?></label></td>
-		                  		<td><input id="wp_so_facebook_url" name="wp_so_facebook_url" type="text" value="<?php echo $wp_so_facebook_url ?>" class="regular-text" /><br></td>
-													<td><pre>Call using $options['wp_so_facebook_url'];</pre></td>
+		                  		<td scope="row"><label for="rscto_facebook_url"><?php esc_attr_e('FaceBook URL', 'wp_admin_style'); ?></label></td>
+		                  		<td><input id="rscto_facebook_url" name="rscto_facebook_url" type="text" value="<?php echo $rscto_facebook_url ?>" class="regular-text" /><br></td>
+													<td><pre>Call using $options['rscto_facebook_url'];</pre></td>
 		                  	</tr>
 
 												<tr valign="top" class="alternate">
-													<td scope="row"><label for="wp_so_linkdin_url"><?php esc_attr_e('Linkdin URL', 'wp_admin_style'); ?></label></td>
-													<td><input id="wp_so_linkdin_url" name="wp_so_linkdin_url" type="text" value="<?php echo $wp_so_linkdin_url ?>" class="regular-text" /><br></td>
-													<td><pre>Call using $options['wp_so_linkdin_url'];</pre></td>
+													<td scope="row"><label for="rscto_linkdin_url"><?php esc_attr_e('Linkdin URL', 'wp_admin_style'); ?></label></td>
+													<td><input id="rscto_linkdin_url" name="rscto_linkdin_url" type="text" value="<?php echo $rscto_linkdin_url ?>" class="regular-text" /><br></td>
+													<td><pre>Call using $options['rscto_linkdin_url'];</pre></td>
 												</tr>
 
 												<tr valign="top" class="alternate">
-													<td scope="row"><label for="wp_so_youtube_url"><?php esc_attr_e('Youtube URL', 'wp_admin_style'); ?></label></td>
-													<td><input id="wp_so_youtube_url" name="wp_so_youtube_url" type="text" value="<?php echo $wp_so_youtube_url ?>" class="regular-text" /><br></td>
-													<td><pre>Call using $options['wp_so_youtube_url'];</pre></td>
+													<td scope="row"><label for="rscto_youtube_url"><?php esc_attr_e('Youtube URL', 'wp_admin_style'); ?></label></td>
+													<td><input id="rscto_youtube_url" name="rscto_youtube_url" type="text" value="<?php echo $rscto_youtube_url ?>" class="regular-text" /><br></td>
+													<td><pre>Call using $options['rscto_youtube_url'];</pre></td>
 												</tr>
 					
 					                          
@@ -237,31 +237,31 @@ jQuery(document).ready(function() {
 							<h2 class="hndle"><span><?php esc_attr_e( 'Admin Options', 'wp_admin_style' ); ?></span></h2>
 								<div class="inside">
 									<table class="form-table">
-										<input type="hidden" name="wp_so_submitted" value="Y">
+										<input type="hidden" name="rscto_submitted" value="Y">
 												<tr valign="top" class="alternate">			
 													<td scope="row">
-														<label for="wp_so_admin_logo_url"><?php esc_attr_e('Logo URL', 'wp_admin_style'); ?></label>
+														<label for="rscto_admin_logo_url"><?php esc_attr_e('Logo URL', 'wp_admin_style'); ?></label>
 													</td>
 													<td>  
-														 <input  value="<?php echo $wp_so_admin_logo_url ?>" class="regular-text process_custom_images" id="process_custom_images wp_so_admin_logo_url" name="wp_so_admin_logo_url" max="" min="1" step="1" name="wp_so_admin_logo_url">
+														 <input  value="<?php echo $rscto_admin_logo_url ?>" class="regular-text process_custom_images" id="process_custom_images rscto_admin_logo_url" name="rscto_admin_logo_url" max="" min="1" step="1" name="rscto_admin_logo_url">
 													     <button class="set_custom_images button">Upload Image</button><br>
 													</td>
 													<td>
-														<pre>Call using $options['wp_so_admin_logo_url'];</pre>
+														<pre>Call using $options['rscto_admin_logo_url'];</pre>
 													</td>
 												</tr>
 										
 										
 													<tr valign="top" class="alternate">			
 													<td scope="row">
-														<label for="wp_so_header_bg_color"><?php esc_attr_e('Background URL', 'wp_admin_style'); ?></label>
+														<label for="rscto_header_bg_color"><?php esc_attr_e('Background URL', 'wp_admin_style'); ?></label>
 													</td>
 													<td>  
-														 <input  value="<?php echo $wp_so_admin_bg ?>" class="regular-text process_custom_images" id="process_custom_images wp_so_admin_bg" name="wp_so_admin_bg" max="" min="1" step="1" name="wp_so_admin_bg">
+														 <input  value="<?php echo $rscto_admin_bg ?>" class="regular-text process_custom_images" id="process_custom_images rscto_admin_bg" name="rscto_admin_bg" max="" min="1" step="1" name="rscto_admin_bg">
 													     <button class="set_custom_images button">Upload Image</button><br>
 													</td>
 													<td>
-														<pre>Call using $options['wp_so_admin_bg'];</pre>
+														<pre>Call using $options['rscto_admin_bg'];</pre>
 													</td>
 												</tr>
 										
